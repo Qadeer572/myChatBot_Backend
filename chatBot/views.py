@@ -51,7 +51,6 @@ def chat(request):
 
 
     if user_message:
-        print("hello World")
         response = model.generate_content(user_message)
         return Response({"chatResponse": response.text}, status=status.HTTP_201_CREATED)
     else :

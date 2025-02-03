@@ -4,7 +4,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import HttpResponse
+import os
+import json
 # Create your views here.
+
+FILENAME = "chat_history.json"
+
+
 
 
 def user_profile(request):
@@ -63,9 +69,45 @@ def login_user(request):
     # Authenticate the user using username and password
     user = authenticate(request, username=user.username, password=password)
 
+    c_user=User.objects.filter(email=email)
+    
     # If authentication fails
     if user is None:
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
     # Authentication successful
-    return Response({'message': 'User logged in successfully'}, status=status.HTTP_200_OK)
+ 
+    return Response({'email': email}, status=status.HTTP_200_OK)
+
+
+
+
+
+
+
+def load_chat_data():
+    """Load existing chat data from the JSON file."""
+    if os.path.exists(FILENAME):
+        with open(FILENAME, "r") as file:
+            try:
+                return json.load(file)
+            except json.JSONDecodeError:
+                return {}
+    return {}
+
+
+
+def save_chat_history(user_id, user_message, bot_response):
+    """Save chat history for a user in a single JSON file."""
+    chat_data = load_chat_data()
+    
+    # Ensure the user has an entry in the chat data
+    if user_id not in chat_data:
+        chat_data[user_id] = []
+    
+    # Append the new chat message
+    chat_data[user_id].append({"user": user_message, "bot": bot_response})
+
+    # Write updated data back to the file
+    with open(FILENAME, "w") as file:
+        json.dump(chat_data, file, indent=4)

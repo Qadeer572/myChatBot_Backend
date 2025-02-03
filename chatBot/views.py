@@ -100,7 +100,7 @@ def get_chat_history(request):
     
     chat_data = load_chat_data()
     chat_history = chat_data.get(email, [])
-    print(chat_history)
+     
     return JsonResponse({"email": email, "history": chat_history})        
 
  

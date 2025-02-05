@@ -58,7 +58,10 @@ def chat(request):
 
     if user_message:
         response = model.generate_content(user_message)
-        save_chat_history(email, user_message, response.text)
+        if email is None:
+            print("No History stored for user")
+        else:    
+            save_chat_history(email, user_message, response.text)
         return Response({"chatResponse": response.text}, status=status.HTTP_201_CREATED)
     else :
         return Response({"chatResponse": "I didn't get your message. Please try again."}, status=status.HTTP_400_BAD_REQUEST)

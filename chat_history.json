@@ -45,6 +45,130 @@
         {
             "user": "exit",
             "bot": "Bye!"
+        },
+        {
+            "user": "nice work",
+            "bot": "Thank you for your kind words! I am glad you enjoyed my work. I am always striving to improve, so if you have any feedback, please do not hesitate to let me know."
+        },
+        {
+            "user": "hi",
+            "bot": "Hello!"
+        },
+        {
+            "user": "ok give me code in c++ to print hello world and dont use comments",
+            "bot": "#include <iostream>\nint main(){std::cout<<\"hello, world\\n\";}"
+        },
+        {
+            "user": "give me implementation of linklist without comments",
+            "bot": "```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n\n    def insert_at_beginning(self, data):\n        new_node = Node(data)\n        new_node.next = self.head\n        self.head = new_node\n\n    def insert_at_end(self, data):\n        new_node = Node(data)\n        if self.head is None:\n            self.head = new_node\n            return\n        current_node = self.head\n        while current_node.next is not None:\n            current_node = current_node.next\n        current_node.next = new_node\n\n    def insert_at_index(self, index, data):\n        if index == 0:\n            self.insert_at_beginning(data)\n            return\n        current_node = self.head\n        count = 0\n        while current_node is not None and count < index - 1:\n            current_node = current_node.next\n            count += 1\n        if current_node is None or count < index - 1:\n            raise IndexError(\"Index out of range\")\n        new_node = Node(data)\n        new_node.next = current_node.next\n        current_node.next = new_node\n\n    def remove_at_beginning(self):\n        if self.head is None:\n            return\n        self.head = self.head.next\n\n    def remove_at_end(self):\n        if self.head is None:\n            return\n        if self.head.next is None:\n            self.head = None\n            return\n        current_node = self.head\n        while current_node.next.next is not None:\n            current_node = current_node.next\n        current_node.next = None\n\n    def remove_at_index(self, index):\n        if index == 0:\n            self.remove_at_beginning()\n            return\n        current_node = self.head\n        count = 0\n        while current_node is not None and count < index - 1:\n            current_node = current_node.next\n            count += 1\n        if current_node is None or current_node.next is None:\n            raise IndexError(\"Index out of range\")\n        current_node.next = current_node.next.next\n\n    def get_size(self):\n        count = 0\n        current_node = self.head\n        while current_node is not None:\n            count += 1\n            current_node = current_node.next\n        return count\n\n    def print_list(self):\n        current_node = self.head\n        while current_node is not None:\n            print(current_node.data, end=\" \")\n            current_node = current_node.next\n        print()\n```"
+        },
+        {
+            "user": "give me detail info about Babar Aza",
+            "bot": "**Babar Azam**\n\n**Personal Information:**\n\n* **Full name:** Babar Azam Siddiqui\n* **Date of birth:** October 15, 1994\n* **Place of birth:** Lahore, Pakistan\n* **Education:** Completed intermediate education\n* **Height:** 5 feet 7 inches (170 cm)\n* **Nicknames:** Babar the Great, King Babar\n\n**Cricket Career:**\n\n**Debut:**\n\n* First-class debut: March 2013\n* International debut: May 2015 (Twenty20 International)\n\n**Batting Style:**\n\n* Right-handed batsman\n* Top-order batsman (usually opens the batting)\n\n**Teams Represented:**\n\n* **Domestic:**\n    * Habib Bank Limited\n    * Central Punjab\n    * Karachi Kings (PSL)\n* **International:**\n    * Pakistan (Test cricket, ODI cricket, T20I cricket)\n\n**Batting Records:**\n\n* **Test cricket:**\n    * Most runs (5,441) by a Pakistani batsman\n    * Highest average (52.44) among active Test batsmen\n    * Highest individual score (196) by a Pakistani batsman in Test cricket\n* **ODI cricket:**\n    * Most runs (4,486) for Pakistan in ODI cricket\n    * Highest average (65.05) among active ODI batsmen\n    * Highest individual score (158) by a Pakistani batsman in ODI cricket\n* **T20I cricket:**\n    * Most runs (2,686) for Pakistan in T20I cricket\n    * Highest average (49.59) among active T20I batsmen\n    * Highest individual score (122) by a Pakistani batsman in T20I cricket\n\n**Awards and Honors:**\n\n* ICC Player of the Year (2019)\n* ICC Test Player of the Year (2018, 2020)\n* ICC ODI Player of the Year (2019)\n* Sir Garfield Sobers Trophy (2019)\n\n**Personal Life:**\n\n* Married to Mariam Wasim in 2022\n* Fluent in English, Urdu, and Punjabi\n* Known for his humble nature and dedication to cricket\n* Has a large following on social media, with over 10 million followers on Instagram\n\n**Other Notable Achievements:**\n\n* Led Pakistan to victory in the 2017 ICC Champions Trophy\n* Scored over 100 runs in all three formats of international cricket (Test, ODI, T20I)\n* Has been consistently ranked among the top batsmen in the world by the ICC"
+        },
+        {
+            "user": "give me today date",
+            "bot": "March 9, 2023"
+        },
+        {
+            "user": "wtf",
+            "bot": "I'm sorry, but I don't understand what you're asking me. Could you please rephrase your question?"
+        },
+        {
+            "user": "what is today date",
+            "bot": "May 11, 2023"
+        },
+        {
+            "user": "give me correct today date",
+            "bot": "March 8, 2023"
+        },
+        {
+            "user": "correct",
+            "bot": "**Correct**"
+        },
+        {
+            "user": "today date",
+            "bot": "February 25, 2023"
+        },
+        {
+            "user": "today date is February 5,2025",
+            "bot": "The provided date is incorrect. February has only 28 or 29 days. Therefore, the correct date should be February 5, 2023."
+        },
+        {
+            "user": "no year is 2025",
+            "bot": "* 2024\n* 2026\n* 2027\n* 2028\n* 2029"
+        },
+        {
+            "user": "wtf i say today date is February 5,2025",
+            "bot": "Today's date is **March 1, 2023**, not February 5, 2025."
+        },
+        {
+            "user": "wtf",
+            "bot": "I am sorry, I am not supposed to generate responses that are offensive or inflammatory in nature. Would you like me to try generating something different?"
+        },
+        {
+            "user": "today date is February 5,2025",
+            "bot": "Your provided date, February 5, 2025, is correct."
+        },
+        {
+            "user": "so what is today date",
+            "bot": "June 30, 2023"
+        },
+        {
+            "user": "how to build AI Apllication",
+            "bot": "**Step 1: Define the Problem**\n\n* Identify a specific problem that AI can address.\n* Define the desired outcomes and metrics for success.\n\n**Step 2: Choose an AI Approach**\n\n* Select the type of AI approach that best suits the problem: supervised learning, unsupervised learning, reinforcement learning.\n\n**Step 3: Gather and Prepare Data**\n\n* Collect and clean data relevant to the problem.\n* Format and prepare the data for use in an AI model.\n\n**Step 4: Build the Model**\n\n* Choose an appropriate AI algorithm (e.g., regression, classification, clustering).\n* Train the model using the prepared data.\n* Evaluate the model's performance using metrics.\n\n**Step 5: Deploy the Model**\n\n* Integrate the AI model into a software application or platform.\n* Make the application or platform accessible to end users.\n\n**Step 6: Monitor and Maintain**\n\n* Monitor the performance of the AI application.\n* Update the model and data as needed to ensure ongoing accuracy.\n\n**Detailed Steps:**\n\n**1. Preprocessing and Cleaning Data:**\n\n* Remove duplicate or missing data.\n* Handle outliers and extreme values.\n* Transform data to a suitable format for the AI model.\n\n**2. Feature Engineering:**\n\n* Extract relevant features from the data.\n* Combine, transform, or create new features to enhance the model's performance.\n\n**3. Training the Model:**\n\n* Split the data into training and testing sets.\n* Train the model on the training set using an appropriate algorithm.\n* Hyperparameter tuning: Optimize model parameters for improved performance.\n\n**4. Evaluation and Validation:**\n\n* Evaluate the model's performance on the testing set using metrics like accuracy, precision, recall, etc.\n* Consider cross-validation techniques to ensure robustness.\n\n**5. Deployment and Integration:**\n\n* Package the trained model into a deployable format.\n* Integrate the model with the user interface and application logic.\n* Handle real-time data and provide user feedback.\n\n**6. Maintenance and Updates:**\n\n* Monitor the model's accuracy and performance over time.\n* Re-train the model with new or updated data to improve its performance.\n* Stay up-to-date with advancements in AI techniques and best practices.\n\n**Additional Tips:**\n\n* Use cloud computing platforms for scalability and access to advanced tools.\n* Consider ethical implications and biases in AI applications.\n* Iteratively develop and refine the AI application based on user feedback and performance metrics."
+        },
+        {
+            "user": "so whats is today date",
+            "bot": "Today's date is **February 28, 2023**."
+        },
+        {
+            "user": "today date is February 25,2025",
+            "bot": "The current date is March 8, 2023. February 25, 2025 was a Tuesday."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is February 5, 2023, not February 5, 2025."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is Sunday, February 5, 2023."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is February 5, 2023, not 2025."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is February 5, 2023, not 2025."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is actually August 15, 2023, not February 5, 2025."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is not February 5, 2025. Today is March 8, 2023."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "That is incorrect, today is August 8, 2023."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is February 5, 2023, not 2025."
+        },
+        {
+            "user": "no today date is february 5,2025",
+            "bot": "Today is February 5, 2025."
+        },
+        {
+            "user": "so give me today date",
+            "bot": "August 16, 2023"
+        },
+        {
+            "user": "wtf",
+            "bot": "I am not sure what you mean. Can you please rephrase your question?"
         }
     ]
 }

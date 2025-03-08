@@ -11,10 +11,10 @@ import os
 
 FILENAME = "chat_history.json"
 
-API_KEY = "AIzaSyDnODAc5ZxH8t-xRme8Zm6LqLGI8n1fkCM"
+API_KEY = "AIzaSyA2qPG4deKcarcXDOXY1dPJ-oI9JNjH4wA"
 
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini")
 
 
 
@@ -106,5 +106,20 @@ def get_chat_history(request):
      
     return JsonResponse({"email": email, "history": chat_history})        
 
- 
- 
+
+
+@api_view(["POST"])
+def delete_chat_history(request):
+    email = request.data.get("email")
+
+    if not email:
+        return JsonResponse({"error": "Email is required"}, status=400)
+    
+    chat_data = load_chat_data()
+    if email in chat_data:
+        del chat_data[email]
+        with open(FILENAME, "w") as file:
+            json.dump(chat_data, file, indent=4)
+        return JsonResponse({"message": "Chat history deleted successfully"})
+    else:
+        return JsonResponse({"error": "Email not found"}, status=404)

@@ -59,6 +59,7 @@ ROOT_URLCONF = 'backend.urls'
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
 CORS_ALLOWED_ORIGINS = [
     "https://chatlink-bice.vercel.app",  # Next.js frontend
+    "http://localhost:3000"
 ]
 
 

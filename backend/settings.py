@@ -132,9 +132,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 
+# Static files
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Ensure this directory exists or remove if not needed
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
 django_heroku.settings(locals()) 
 
 # Default primary key field type
